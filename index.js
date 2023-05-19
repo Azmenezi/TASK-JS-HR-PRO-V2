@@ -76,7 +76,7 @@ let lowestBonus = managers.find((manager) => manager.bonusPercentage == 0.1);
 
 let promotionCandidate = employees.find((employee) => employee.salary > 8000);
 
-let mostPaidEmployee = employees.sort((a, b) => a.salary - b.salary).pop();
+let mostPaidEmployee = [...employees].sort((a, b) => a.salary - b.salary).pop();
 
 // console.log(mostPaidEmployee);
 
@@ -84,6 +84,8 @@ let totalSalaries = employees.reduce((a, b) => a + b.salary, 0);
 
 console.log(totalSalaries);
 
-let employeesSorted = employees.sort((a, b) => a.yearJoined - b.yearJoined);
+let employeesSorted = [...employees].sort(
+  (a, b) => a.yearJoined - b.yearJoined
+);
 
 console.log(employeesSorted);
